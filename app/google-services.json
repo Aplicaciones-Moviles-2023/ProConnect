@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "84624371347",
+    "project_id": "proconnect-9e8eb",
+    "storage_bucket": "proconnect-9e8eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84624371347:android:b4118868b17c390dbfe766",
+        "android_client_info": {
+          "package_name": "com.example.proconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84624371347-5179o3gcjpoast7fjv78ts5thgonqd55.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwqDNEi0emnY4mBiXS4mtPnShjSpXaSrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84624371347-5179o3gcjpoast7fjv78ts5thgonqd55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
