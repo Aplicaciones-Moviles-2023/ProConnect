@@ -24,6 +24,12 @@
             android:text="Email" />
 
         <Button
+            android:id="@+id/btn_agregarEmpleo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nuevo" />
+
+        <Button
             android:id="@+id/btn_CerrarSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
