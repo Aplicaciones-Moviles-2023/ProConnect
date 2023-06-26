@@ -50,10 +50,13 @@ public class ItemDetailFragment extends Fragment {
     private TextView TextViewDescripcion;
     private TextView TextViewUbicacion;
     private TextView TextViewTipo;
-
     private String id;
-
+    private String titulo;
+    private String descripcion;
+    private String ubicacion;
+    private String tipo;
     private Button btnEliminar;
+    private Button btnEditar;
 
 
     private final View.OnDragListener dragListener = (v, event) -> {
@@ -83,6 +86,10 @@ public class ItemDetailFragment extends Fragment {
             // to load content from a content provider.
             mItem = PlaceholderContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
             id = mItem.id;
+            titulo = mItem.titulo;
+            descripcion = mItem.descripcion;
+            ubicacion = mItem.ubicacion;
+            tipo = mItem.tipo;
         }
     }
 
@@ -100,11 +107,19 @@ public class ItemDetailFragment extends Fragment {
         TextViewTipo = binding.tipo;
 
         btnEliminar = rootView.findViewById(R.id.btnEliminar);
+        btnEditar = rootView.findViewById(R.id.btnEditar);
 
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showConfirmationDialog();
+            }
+        });
+
+        btnEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editar();
             }
         });
 
@@ -129,6 +144,16 @@ public class ItemDetailFragment extends Fragment {
                 mToolbarLayout.setTitle(mItem.titulo);
             }
         }
+    }
+
+    private void editar() {
+        Intent intent = new Intent(getActivity(), editActivity.class);
+        intent.putExtra("idEmpleo", id);
+        intent.putExtra("titulo", titulo);
+        intent.putExtra("descripcion", descripcion);
+        intent.putExtra("ubicacion", ubicacion);
+        intent.putExtra("tipo", tipo);
+        startActivity(intent);
     }
 
     private void showConfirmationDialog() {
