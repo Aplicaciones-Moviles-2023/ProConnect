@@ -90,6 +90,7 @@ public class AuthActivity extends AppCompatActivity {
         //Al iniciar la actividad se verifica si el usuario ya ha iniciado sesion
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
+            Toast.makeText(AuthActivity.this, "El usuario ya se encuentra autenticado", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(AuthActivity.this, HomeActivity.class);
             intent.putExtra("email", currentUser.getEmail());
             startActivity(intent);

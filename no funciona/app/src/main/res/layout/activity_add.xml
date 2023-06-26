@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".addActivity">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -17,28 +17,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/emailTextView"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Email" />
-
-        <Button
-            android:id="@+id/btn_listarEmpleos"
+        <EditText
+            android:id="@+id/editTextTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Listar empleos" />
+            android:ems="10"
+            android:hint="Titulo"
+            android:inputType="text" />
 
-        <Button
-            android:id="@+id/btn_agregarEmpleo"
+        <EditText
+            android:id="@+id/editTextDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nuevo" />
+            android:ems="10"
+            android:hint="Descripcion"
+            android:inputType="text" />
 
-        <Button
-            android:id="@+id/btn_CerrarSesion"
+        <EditText
+            android:id="@+id/editTextTipo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cerrar sesion" />
+            android:ems="10"
+            android:hint="Tipo"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ubicacion"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnAgregar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar" />
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
