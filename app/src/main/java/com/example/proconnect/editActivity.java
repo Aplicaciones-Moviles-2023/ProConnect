@@ -108,7 +108,7 @@ public class editActivity extends AppCompatActivity {
                         }
                     }
                 });
-                
+
                 Toast.makeText(editActivity.this, "Empleo editado correctamente", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(editActivity.this, AuthActivity.class);
                 startActivity(intent);

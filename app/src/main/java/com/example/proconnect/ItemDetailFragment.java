@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ import com.example.proconnect.databinding.FragmentItemDetailBinding;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
+
 
 /**
  * A fragment representing a single Item detail screen.
@@ -50,11 +53,13 @@ public class ItemDetailFragment extends Fragment {
     private TextView TextViewDescripcion;
     private TextView TextViewUbicacion;
     private TextView TextViewTipo;
+    private ImageView ImageViewImagen;
     private String id;
     private String titulo;
     private String descripcion;
     private String ubicacion;
     private String tipo;
+    private String imagen;
     private Button btnEliminar;
     private Button btnEditar;
 
@@ -90,6 +95,7 @@ public class ItemDetailFragment extends Fragment {
             descripcion = mItem.descripcion;
             ubicacion = mItem.ubicacion;
             tipo = mItem.tipo;
+            imagen = mItem.imagen;
         }
     }
 
@@ -105,9 +111,14 @@ public class ItemDetailFragment extends Fragment {
         TextViewDescripcion = binding.itemDetail;
         TextViewUbicacion = binding.ubicacion;
         TextViewTipo = binding.tipo;
+        ImageViewImagen = binding.imagen;
 
         btnEliminar = rootView.findViewById(R.id.btnEliminar);
         btnEditar = rootView.findViewById(R.id.btnEditar);
+
+        ImageView imageView;
+        imageView = rootView.findViewById(R.id.imagen);
+
 
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +148,7 @@ public class ItemDetailFragment extends Fragment {
 
     private void updateContent() {
         if (mItem != null) {
+            Picasso.get().load(mItem.imagen).into(ImageViewImagen);
             TextViewDescripcion.setText(mItem.descripcion);
             TextViewUbicacion.setText(mItem.ubicacion);
             TextViewTipo.setText(mItem.tipo);

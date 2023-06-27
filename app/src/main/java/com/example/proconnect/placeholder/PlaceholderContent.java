@@ -9,7 +9,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -69,8 +68,8 @@ public class PlaceholderContent {
     //    }
     //}
 
-    private static PlaceholderItem createPlaceholderItem(String id,String titulo,String descripcion,String tipo,String fecha, String ubicacion) {
-        return new PlaceholderItem(id,titulo,descripcion,fecha,tipo,ubicacion);
+    private static PlaceholderItem createPlaceholderItem(String id,String titulo,String descripcion,String tipo,String fecha, String ubicacion, String imagen) {
+        return new PlaceholderItem(id,titulo,descripcion,fecha,tipo,ubicacion, imagen);
     }
 
     public static void addItem(Map<String, Object> elemento) {
@@ -80,8 +79,9 @@ public class PlaceholderContent {
         String tipo = (String) elemento.get("tipo");
         String fecha = (String) elemento.get("fecha");
         String ubicacion = (String) elemento.get("ubicacion");
+        String imagen = (String) elemento.get("imagen");
 
-        PlaceholderItem item = new PlaceholderItem(id, titulo, descripcion, fecha, tipo, ubicacion);
+        PlaceholderItem item = new PlaceholderItem(id, titulo, descripcion, fecha, tipo, ubicacion, imagen);
 
         // Agregamos el nuevo empleo a la lista
         ITEMS.add(item);
@@ -107,14 +107,16 @@ public class PlaceholderContent {
         public final String fecha;
         public final String tipo;
         public final String ubicacion;
+        public final String imagen;
 
-        public PlaceholderItem(String id, String titulo, String descripcion, String fecha, String tipo, String ubicacion) {
+        public PlaceholderItem(String id, String titulo, String descripcion, String fecha, String tipo, String ubicacion, String imagen) {
             this.id = id;
             this.titulo = titulo;
             this.descripcion = descripcion;
             this.fecha = fecha;
             this.tipo = tipo;
             this.ubicacion = ubicacion;
+            this.imagen = imagen;
         }
 
         @NonNull

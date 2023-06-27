@@ -61,5 +61,12 @@
             android:layout_height="wrap_content"
             android:text="Volver" />
 
+        <Button
+            android:id="@+id/btnSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar imagen"
+            android:onClick="seleccionarImagen" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
